@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #58A6FF;
+  --color-primary-hover: #1f6feb;
+  --color-secondary: #238636;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* GitHub Dark Mode Palette */
+  --color-github-bg: #0D1117;
+  --color-github-card: #161B22;
+  --color-github-border: #30363D;
+  --color-github-text: #F0F6FC;
+  --color-github-text-muted: #8B949E;
+  --color-github-accent: #58A6FF;
+  --color-github-purple: #7C3AED;
+}
+
+:root {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--color-github-text);
+  background-color: var(--color-github-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-github-bg);
+  color: var(--color-github-text);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from marquee if any */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-huly-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-huly-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Utilities for Huly style */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+  animation: marquee 40s linear infinite;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}
+
+@keyframes waddle {
+
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(2deg) translateY(-4px);
+  }
+}
+
+.animate-waddle {
+  animation: waddle 1s ease-in-out infinite;
+}
