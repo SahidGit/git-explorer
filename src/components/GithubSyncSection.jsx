@@ -1,35 +1,42 @@
 import React from 'react';
 import { FaSync, FaLock, FaLayerGroup, FaCompass, FaChartLine, FaFilter, FaGithub } from 'react-icons/fa';
 
+import iconSShape from '../assets/icon-s-shape.png';
+import iconGrid from '../assets/icon-grid.png';
+import iconLayers from '../assets/icon-layers.png';
+import iconCompass from '../assets/icon-compass.png';
+import iconDiamonds from '../assets/icon-diamonds.png';
+import iconSync from '../assets/icon-sync.png';
+
 const GithubSyncSection = () => {
     const features = [
         {
-            icon: <img src="/src/assets/icon-s-shape.png" alt="Two-way synchronization" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconSShape} alt="Two-way synchronization" className="w-8 h-8 object-contain" />,
             title: "Two-way synchronization",
             description: "Integrate your task tracker with GitHub to sync changes instantly."
         },
         {
-            icon: <img src="/src/assets/icon-grid.png" alt="Private tasks" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconGrid} alt="Private tasks" className="w-8 h-8 object-contain" />,
             title: "Private tasks",
             description: "Integration and management of multiple data repositories effectively."
         },
         {
-            icon: <img src="/src/assets/icon-layers.png" alt="Multiple repositories" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconLayers} alt="Multiple repositories" className="w-8 h-8 object-contain" />,
             title: "Multiple repositories",
             description: "Organize multiple projects for more effective planning and collaboration."
         },
         {
-            icon: <img src="/src/assets/icon-compass.png" alt="Milestone migration" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconCompass} alt="Milestone migration" className="w-8 h-8 object-contain" />,
             title: "Milestone migration",
             description: "Seamless migration of key project milestones between repositories."
         },
         {
-            icon: <img src="/src/assets/icon-diamonds.png" alt="Track progress" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconDiamonds} alt="Track progress" className="w-8 h-8 object-contain" />,
             title: "Track progress",
             description: "Keep track of GitHub contributions and changes within your workspace."
         },
         {
-            icon: <img src="/src/assets/icon-sync.png" alt="Advanced filtering" className="w-8 h-8 object-contain" />,
+            icon: <img src={iconSync} alt="Advanced filtering" className="w-8 h-8 object-contain" />,
             title: "Advanced filtering",
             description: "Precise project data search with advanced filtering capabilities."
         }
