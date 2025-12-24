@@ -11,7 +11,7 @@ export default [
   // Base JavaScript rules
   js.configs.recommended,
 
-  // Project-specific rules
+  // React / JSX files
   {
     files: ['**/*.{js,jsx}'],
     plugins: {
@@ -22,19 +22,24 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true, // 🔑 THIS WAS MISSING
+        },
+      },
     },
     rules: {
-      // React Hooks rules (manually enabled)
+      // React Hooks rules
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
 
-      // React Refresh rule (what vite config provides)
+      // React Refresh (Vite)
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
 
-      // Your existing rule
+      // Project rule
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
