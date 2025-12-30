@@ -1,5 +1,6 @@
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-import { describe, it, expect, vi, afterEach } from 'vitest';
+import { render, screen, cleanup } from '@testing-library/react';
+import { describe, it, expect, afterEach } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
 import RepoCTA from '../components/features/RepoCard/RepoCTA';
 
 afterEach(() => {
@@ -7,30 +8,37 @@ afterEach(() => {
 });
 
 describe('RepoCTA Component', () => {
-    it('renders as a button with correct text', () => {
-        render(<RepoCTA onNavigate={() => { }} />);
-        const button = screen.getByRole('button', { name: /explore trending repositories/i });
-        expect(button).toBeTruthy();
+    it('renders as a link with correct text', () => {
+        render(
+            <MemoryRouter>
+                <RepoCTA />
+            </MemoryRouter>
+        );
+        const link = screen.getByRole('link', { name: /explore trending repositories/i });
+        expect(link).toBeTruthy();
     });
 
-    it('navigates to dashboard on click', () => {
-        const mockNavigate = vi.fn();
-        render(<RepoCTA onNavigate={mockNavigate} />);
+    it('points to the dashboard', () => {
+        render(
+            <MemoryRouter>
+                <RepoCTA />
+            </MemoryRouter>
+        );
 
-        const button = screen.getByRole('button', { name: /explore trending repositories/i });
-        fireEvent.click(button);
-
-        expect(mockNavigate).toHaveBeenCalledWith('dashboard');
+        const link = screen.getByRole('link', { name: /explore trending repositories/i });
+        expect(link.getAttribute('href')).toBe('/dashboard');
     });
 
-    it('is statically positioned (not fixed)', () => {
-        render(<RepoCTA onNavigate={() => { }} />);
-        const button = screen.getByRole('button', { name: /explore trending repositories/i });
+    it('has correct styling classes', () => {
+        render(
+            <MemoryRouter>
+                <RepoCTA />
+            </MemoryRouter>
+        );
+        const link = screen.getByRole('link', { name: /explore trending repositories/i });
 
-        console.log('Button Classes:', button.className);
-
-        expect(button.className).not.toContain('fixed');
-        expect(button.className).toContain('group');
-        expect(button.className).toContain('flex');
+        expect(link.className).toContain('group');
+        expect(link.className).toContain('flex');
+        expect(link.className).not.toContain('fixed');
     });
 });
