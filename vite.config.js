@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     Sitemap({
-      hostname: 'https://gitexplorer.com',
+      hostname: 'https://git-explore-one.vercel.app',
       dynamicRoutes: [
         '/dashboard',
         '/bookmarks',

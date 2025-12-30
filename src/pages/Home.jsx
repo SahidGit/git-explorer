@@ -32,15 +32,15 @@ const Home = () => {
             <SEO
                 title="GitExplorer - Discover Trending Repositories"
                 description="Explore top trending GitHub repositories, analyze developer profiles, and find the perfect tools for your next project."
-                canonical="https://gitexplorer.com/"
+                canonical="https://git-explore-one.vercel.app/"
                 schema={{
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "name": "GitExplorer",
-                    "url": "https://gitexplorer.com/",
+                    "url": "https://git-explore-one.vercel.app/",
                     "potentialAction": {
                         "@type": "SearchAction",
-                        "target": "https://gitexplorer.com/dashboard?q={search_term_string}",
+                        "target": "https://git-explore-one.vercel.app/dashboard?q={search_term_string}",
                         "query-input": "required name=search_term_string"
                     }
                 }}
