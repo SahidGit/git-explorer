@@ -35,7 +35,7 @@ Repository: https://github.com/SahidGit/git-explorer
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/git-explorer.git
+   git clone https://github.com/SahidGit/git-explorer.git
    ```
 
 2. Navigate to the project directory:
