@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import Header from '../components/layouts/Header';
 import SEO from '../components/ui/SEO';
 import { Home } from 'lucide-react';
